@@ -16,10 +16,6 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.List;
 
-/*
- *   Пока что работа с MIME типами и сохранение происходит здесь
- *   В дальнейшем планирую сделать сервис и миграцию в бд для работы с файлами
- */
 public class ServletFileUtil {
     private static final String UPLOAD_DIRECTORY =
             AppProperties.getProperty("file.upload.directory", "uploads");

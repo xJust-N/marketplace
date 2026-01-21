@@ -82,7 +82,7 @@ public class OrderJdbcRepository implements OrderRepository<Long, Order> {
                 order.getCreatedAt(),
                 order.getStatus().getCode()
         );
-        //Сохранение и удаление в транзакции для поддержания целостности и актуальности.
+        //Сохранение и удаление в транзакции для поддержания целостности
         //Сохраняются и удаляются данные из orders и orders_products
         Connection con = connectionHolder.getConnection();
         try {

@@ -44,7 +44,6 @@ class BaseJdbcRepository<ID, T> {
         }
     }
 
-    //Для транзакции, она нужна при сохранении заказа с продуктами
     ID saveWithGeneratedKey(String sql, List<Object> params, Connection con) throws SQLException {
         try (PreparedStatement ps = con.prepareStatement(sql)) {
             for (int i = 0; i < params.size(); i++) {
@@ -58,7 +57,6 @@ class BaseJdbcRepository<ID, T> {
         return null;
     }
 
-    //Используется для сохранения сессии где uuid генерирует java
     void saveWithoutGeneratedKey(String sql, List<Object> params) throws SQLException {
         try (Connection con = connectionHolder.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
